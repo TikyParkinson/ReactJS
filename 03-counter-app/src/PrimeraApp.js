@@ -2,9 +2,7 @@
 import React from 'react';
 
 // FC
-const PrimeraApp = () => {
-  const saludo = 'Hola mundo';
-
+const PrimeraApp = ({ saludo = 'Hola Mundo' }) => {
   return (
     <>
       <h1>{saludo}</h1>
