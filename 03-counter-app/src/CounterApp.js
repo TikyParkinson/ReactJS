@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 // FC
 const CounterApp = ({ value }) => {
-  const [counter, setCounter] = useState(0);
-
-  const handleAdd = (e) => {
-    // setCounter(counter + 1);
-    setCounter((c) => c + 1);
-  };
+  const [counter, setCounter] = useState(value);
+  const handleAdd = (e) => setCounter((c) => c + 1);
+  const handleSubstract = (e) => setCounter((c) => c - 1);
+  const handleReset = (e) => setCounter((c) => value);
 
   return (
     <>
@@ -16,6 +14,8 @@ const CounterApp = ({ value }) => {
       <p>{counter}</p>
 
       <button onClick={handleAdd}>+1</button>
+      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleSubstract}>-1</button>
     </>
   );
 };
